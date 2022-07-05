@@ -1,0 +1,124 @@
+1) Посмотреть где я
+
+			pwd
+			
+2) Создать папку
+
+			mkdir directory
+
+3) Зайти в папку
+
+			cd directory
+			
+4) Создать 3 папки
+
+			mkdir c1
+			mkdir c2
+			mkdir c3
+			
+5) Зайти в любоую папку
+
+			cd c1
+			
+6) Создать 5 файлов (3 txt, 2 json)
+
+			vim q1.txt
+			touch q2.txt
+			cat> q3.txt
+				drhzr
+				rghzh
+				qwwvfg
+			touch q4.json
+			touch q5.json
+
+7) Создать 3 папки
+			
+			mkdir c1.1
+			mkdir c1.2
+			mkdir c1.3
+			
+8. Вывести список содержимого папки
+
+			ls
+				c1.1/  c1.2/  c1.3/  q1.txt  q2.txt  q3.txt  q4.json  q5.json
+
+9) Открыть любой txt файл
+			
+			cat q3.txt
+			
+10) Написать туда что-нибудь, любой текст
+
+			cat>> q3.txt
+				garg
+				фуке
+				фкпвпр
+
+11) Сохранить и выйти
+
+			ctrl+с
+			
+12) Выйти из папки на уровень выше
+
+			cd ..
+
+13) Переместить любые 2 файла, которые вы создали, в любую другую папку
+
+			mv q4.json c1.1
+			mv q5.json c1.1
+			
+14) Скопировать любые 2 файла, которые вы создали, в любую другую папку
+			
+			cp q2.txt c1.2
+			cp q3.txt c1.2
+
+15) Найти файл по имени
+
+			find -name q2.txt
+
+16) Просмотреть содержимое в реальном времени 
+
+			tail -f q3.txt
+
+17) Вывести несколько первых строк из текстового файла
+
+			head -n4 q3.txt
+
+18) Вывести несколько последних строк из текстового файла
+
+			tail -n2 q3.txt
+
+19) Просмотреть содержимое длинного файла (команда less)
+
+			less q1.txt
+
+20) Вывести дату и время
+
+			date +%c
+				Tue Jul  5 11:10:06 2022
+
+=======
+Задание *
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+			curl http://162.55.220.72:5005/terminal-hw-request
+				  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+												 Dload  Upload   Total   Spent    Left  Speed
+				100   283  100   283    0     0   3151      0 --:--:-- --:--:-- --:--:--  3179{
+				  "Intro": "Hello!! This is your the first response from server",
+				  "Tasks": {
+					"Task_1": "Send the next URL in terminal: http://162.55.220.72:5005/get_method?name=(set_your_String)&age=(set_your_number)",
+					"result": [
+					  "Your_String",
+					  "Your_number"
+					]
+				  }
+				}
+
+			curl "http://162.55.220.72:5005/get_method?name=Mari&age=27"
+				  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+												 Dload  Upload   Total   Spent    Left  Speed
+				100    22  100    22    0     0    220      0 --:--:-- --:--:-- --:--:--   222[
+				  "Mari",
+				  "27"
+				]
