@@ -144,47 +144,33 @@
 				
 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
 
-			grep -r 'sec'
+			grep sec *.*
 
 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
 
-			grep -ri 'sec'
-				tf_2.txt:the sec 3
-				tf_2.txt:the sec 3
-				tf_2.txt:the seConD 2
-				tf_3.txt:the second 2
-				tf_3.txt:the second 2
-				tf_3.txt:the sec 2
-				tf_3.txt:the SeCoNd 2
+			grep -i sec *.*
+				tf_2.txt:the second 2
+
 
 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
 			
-			grep -rw 'sec' 
-				tf_2.txt:the sec 3
-				tf_2.txt:the sec 3
-				tf_3.txt:the sec 2
+			grep -w sec *.*
 
 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
 
-			grep -riw 'sec'
-				tf_2.txt:the seConD 2
-				tf_3.txt:the second 2
-				tf_3.txt:the second 2
-				tf_3.txt:the SeConD 2
+			grep 'second' *.*
+				tf_2.txt:the second 2
 
 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
 
-			grep -rw 'second' *.txt
+			grep -w 'second' *.*
 				tf_3.txt:the second 2
 				tf_3.txt:the second 2
 
 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
 
-			grep -riw 'second' 
-				tf_2.txt:the seConD 2
-				tf_3.txt:the second 2
-				tf_3.txt:the second 2
-				tf_3.txt:the SeCoNd 2
+			grep -w second *.*
+				tf_2.txt:the second 2
 
 29. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
 
@@ -195,6 +181,27 @@
 30. Найти все строки во всех файлах где нет комбинации “second”
 
 			grep -rv second
+				inner_dir_1/tf_2.txt:the sec 3
+				inner_dir_1/tf_2.txt:the seConD 2
+				inner_dir_1/tf_3.txt:the first 1
+				inner_dir_1/tf_3.txt:the third 3
+				inner_dir_1/tf_3.txt:the sec 2
+				inner_dir_1/tf_3.txt:the SeConD 2
+				inner_dir_1/tf_5.txt:1
+				inner_dir_1/tf_5.txt:2
+				inner_dir_1/tf_5.txt:3
+				inner_dir_1/tf_5.txt:4
+				inner_dir_1/tf_5.txt:5
+				inner_dir_1/tf_5.txt:6
+				inner_dir_1/tf_5.txt:7
+				inner_dir_1/tf_5.txt:8
+				inner_dir_1/tf_5.txt:9
+				inner_dir_1/tf_5.txt:10
+				inner_dir_1/tf_5.txt:11
+				inner_dir_1/tf_5.txt:12
+				inner_dir_1/tf_5.txt:13
+				tf_2.txt:the first 1
+				tf_2.txt:the third 3
 			
 31. Найти только название и путь к файлам где нет комбинации “second”
 
@@ -220,6 +227,6 @@
 
 			xargs -r0 --arg-file <(find . -type f -exec grep -lZ sec {} + ) mv -i --target-directory ./dir_2/
 
-39. Просто вывести в терминал строку “Good job!!”
+36. Просто вывести в терминал строку “Good job!!”
 
 			echo "Good job!!"
